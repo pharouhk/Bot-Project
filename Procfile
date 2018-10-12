@@ -1,1 +1,1 @@
-web: gunicorn main_bot
+web: gunicorn main_bot:main
