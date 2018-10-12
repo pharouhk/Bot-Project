@@ -8,8 +8,3 @@ requests-oauthlib==0.8.0
 scipy==1.1.0
 telegram==0.0.1
 gunicorn==19.9.0
-<<<<<<< HEAD
-python==3.6.4 
-=======
- 
->>>>>>> 987cc032003ecf6181bcbba4ac3b4de1cf8dfe78
