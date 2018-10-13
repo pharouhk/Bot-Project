@@ -26,7 +26,7 @@ class BotHandler(object):
 
     def __init__(self, dialogue_manager):
         self.token = os.getenv('Telegram_key')
-        self.api_url = "https://api.telegram.org/bot{}/".format(token)
+        self.api_url = "https://api.telegram.org/bot{}/".format(self.token)
         self.dialogue_manager = dialogue_manager
 
     def get_updates(self, offset=None, timeout=30):
@@ -78,14 +78,14 @@ class SimpleDialogueManager(object):
 
 @my_talk_bot.route('/', methods=['GET','POST'])
 def main():
-    args = parse_args()
-    token = args.token
+    # args = parse_args()
+    # token = args.token
 
-    if not token:
-        if not "TELEGRAM_TOKEN" in os.environ:
-            print("Please, set bot token through --token or TELEGRAM_TOKEN env variable")
-            return
-        token = os.environ["TELEGRAM_TOKEN"]
+    # if not token:
+    #     if not "TELEGRAM_TOKEN" in os.environ:
+    #         print("Please, set bot token through --token or TELEGRAM_TOKEN env variable")
+    #         return
+    #     token = os.environ["TELEGRAM_TOKEN"]
 
     #################################################################
     
@@ -105,7 +105,7 @@ def main():
     'WORD_EMBEDDINGS': 'word_embeddings_reduced.pkl',
 }
     advanced_manager = DialogueManager(paths)
-    bot = BotHandler(token, advanced_manager)
+    bot = BotHandler(advanced_manager)
     
     ###############################################################
     # logger = logging.getLogger()
