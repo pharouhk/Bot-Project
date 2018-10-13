@@ -13,7 +13,7 @@ my_talk_bot = Flask(__name__)
 
 from requests.compat import urljoin
 
-logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+my_talk_bot.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 class BotHandler(object):
     """
