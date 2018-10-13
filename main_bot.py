@@ -5,6 +5,11 @@ import time
 import logging
 import argparse
 import os
+from flask import Flask
+from dotenv import load_dotenv
+
+load_dotenv('.env')
+my_talk_bot = Flask(__name__)
 
 from requests.compat import urljoin
 
@@ -19,8 +24,8 @@ class BotHandler(object):
             'get_answer' — computes the most relevant on a user's question
     """
 
-    def __init__(self, token, dialogue_manager):
-        self.token = token
+    def __init__(self, dialogue_manager):
+        self.token = os.getenv('Telegram_key')
         self.api_url = "https://api.telegram.org/bot{}/".format(token)
         self.dialogue_manager = dialogue_manager
 
@@ -71,6 +76,7 @@ class SimpleDialogueManager(object):
         return "Hello, world!" 
         
 
+@my_talk_bot.route('/', methods=['GET','POST'])
 def main():
     args = parse_args()
     token = args.token
