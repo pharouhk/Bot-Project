@@ -10,12 +10,11 @@ from flask import Flask
 from dotenv import load_dotenv
 
 load_dotenv('.env')
-my_talk_bot = Flask(__name__)
+app = Flask(__name__)
 
 from requests.compat import urljoin
 
-my_talk_bot.logger.addHandler(logging.StreamHandler(sys.stdout))
-my_talk_bot.logger.setLevel(logging.ERROR)
+
 
 class BotHandler(object):
     """
@@ -62,7 +61,7 @@ def is_unicode(text):
     return len(text) == len(text.encode())
 
 
-@my_talk_bot.route('/', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def main():
     from dialogue_manager import DialogueManager
 
@@ -100,8 +99,8 @@ def main():
         # logger = logging.getLogger()
         # logger.setLevel(logging.DEBUG)
 if __name__ == "__main__":
-    main()
+    # main()
     port = int(os.environ.get("PORT", 5000))
-    my_talk_bot.run(host = '0.0.0.0', port=port)
+    app.run(host = '0.0.0.0', port=port)
 else:
     gunicorn_app = main()
