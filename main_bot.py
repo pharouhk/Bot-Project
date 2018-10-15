@@ -78,7 +78,7 @@ class SimpleDialogueManager(object):
         return "Hello, world!" 
         
 
-# @my_talk_bot.route('/', methods=['GET','POST'])
+@my_talk_bot.route('/', methods=['GET','POST'])
 def main():
     from dialogue_manager import DialogueManager
 
@@ -117,3 +117,5 @@ def main():
         # logger.setLevel(logging.DEBUG)
 if __name__ == "__main__":
     main()
+else:
+    gunicorn_app = main()
