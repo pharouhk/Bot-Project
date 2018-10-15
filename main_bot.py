@@ -79,7 +79,7 @@ class SimpleDialogueManager(object):
         
 
 @my_talk_bot.route('/', methods=['GET','POST'])
-def main():
+def main(self):
     # args = parse_args()
     # token = args.token
 
