@@ -78,25 +78,8 @@ class SimpleDialogueManager(object):
         return "Hello, world!" 
         
 
-@my_talk_bot.route('/', methods=['GET','POST'])
-def main(self):
-    # args = parse_args()
-    # token = args.token
-
-    # if not token:
-    #     if not "TELEGRAM_TOKEN" in os.environ:
-    #         print("Please, set bot token through --token or TELEGRAM_TOKEN env variable")
-    #         return
-    #     token = os.environ["TELEGRAM_TOKEN"]
-
-    #################################################################
-    
-    # Your task is to complete dialogue_manager.py and use your 
-    # advanced DialogueManager instead of SimpleDialogueManager. 
-    
-    # This is the point where you plug it into the Telegram bot. 
-    # Do not forget to import all needed dependendies when you do so.
-    
+# @my_talk_bot.route('/', methods=['GET','POST'])
+def main():
     from dialogue_manager import DialogueManager
 
     paths = {
