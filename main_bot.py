@@ -14,8 +14,8 @@ load_dotenv('.env')
 
 from requests.compat import urljoin
 
-my_talk_bot.logger.addHandler(logging.StreamHandler(sys.stdout))
-my_talk_bot.logger.setLevel(logging.ERROR)
+# my_talk_bot.logger.addHandler(logging.StreamHandler(sys.stdout))
+# my_talk_bot.logger.setLevel(logging.ERROR)
 
 class BotHandler(object):
     """
