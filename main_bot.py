@@ -101,5 +101,6 @@ def main():
         # logger.setLevel(logging.DEBUG)
 if __name__ == "__main__":
     main()
+    my_talk_bot.run(host = '0.0.0.0',port=5005)
 else:
     gunicorn_app = main()
