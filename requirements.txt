@@ -1,8 +1,8 @@
-nltk==3.2.4
-numpy==1.14.2
-requests==2.18.4
 ChatterBot==0.8.5
-gensim==3.1.0
+numpy==1.14.2
 Flask==0.12.2
+nltk==3.2.4
+gensim==3.1.0
+requests==2.18.4
 python-dotenv==0.9.1
 scikit_learn==0.20.0
