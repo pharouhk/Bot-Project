@@ -99,8 +99,8 @@ def main():
         # logger = logging.getLogger()
         # logger.setLevel(logging.DEBUG)
 if __name__ == "__main__":
-    main()
+    # main()
     # port = int(os.environ.get("PORT", 8080))
-    # app.run(host='127.0.0.1', port=8080, debug=True)
+    app.run()
 else:
     gunicorn_app = main()
