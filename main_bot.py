@@ -101,6 +101,6 @@ def main():
 if __name__ == "__main__":
     # main()
     # port = int(os.environ.get("PORT", 8080))
-    app.run()
+    app.run(debug=True)
 else:
-    gunicorn_app = main()
+    gunicorn_app = app.run(debug=True)
